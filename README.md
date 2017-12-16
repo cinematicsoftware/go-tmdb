@@ -1,20 +1,20 @@
 # go-tmdb
 
-[GoDoc](https://godoc.org/github.com/ryanbradynd05/go-tmdb)  --  [Code Coverage Report](http://rawgit.com/ryanbradynd05/go-tmdb/master/coverage/coverage_report.html)
+[GoDoc](https://godoc.org/github.com/cinematicsoftware/go-tmdb)  --  [Code Coverage Report](http://rawgit.com/cinematicsoftware/go-tmdb/master/coverage/coverage_report.html)
 =================================
 
-A Go Wrapper for the API of [The Movie DB](http://www.themoviedb.org/). Complete [documentation](https://godoc.org/github.com/ryanbradynd05/go-tmdb) and [test suite](http://rawgit.com/ryanbradynd05/go-tmdb/master/coverage/coverage_report.html) are included.
+A Go Wrapper for the API of [The Movie DB](http://www.themoviedb.org/). Complete [documentation](https://godoc.org/github.com/cinematicsoftware/go-tmdb) and [test suite](http://rawgit.com/cinematicsoftware/go-tmdb/master/coverage/coverage_report.html) are included.
 
 An **api_key** is needed to use the API. Register for one at [themoviedb.org](https://www.themoviedb.org/documentation/api).
 
 Note: This product uses the TMDb API but is not endorsed or certified by TMDb.
 
-<img src="https://assets.tmdb.org/images/logos/var_7_0_tmdb-logo-2_Antitled.svg" alt="The Movie DB" width="200" height="200" />
+<img src="https://www.themoviedb.org/assets/static_cache/02a9430b88975cae16fcfcc9cf7b5799/images/v4/logos/primary-green.svg" alt="The Movie DB" width="200" height="200" />
 
 ## How to install
 
 ```shell
-go get github.com/ryanbradynd05/go-tmdb
+go get github.com/cinematicsoftware/go-tmdb
 ```
 
 ## How to use
@@ -22,7 +22,7 @@ go get github.com/ryanbradynd05/go-tmdb
 Import the library
 
 ```go
-import "github.com/ryanbradynd05/go-tmdb"
+import "github.com/cinematicsoftware/go-tmdb"
 ```
     
 Create a container struct for global properties
@@ -68,6 +68,8 @@ Create a local.yml file in the root directory that mirrors the local.yml.example
 All themoviedb.org API v3 GET methods are included. The POST and DELETE APIs are not included yet. For examples on how to call each function, refer to that function's tests. For documentation of the TheMovieDB's API, see their [documentation](http://docs.themoviedb.apiary.io/).
 
 ## License 
+
+This project is a fork of github.com/ryanbradynd05/go-tmdb, licensed under the following license:
 
 The MIT License (MIT)
 
