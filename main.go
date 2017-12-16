@@ -52,7 +52,7 @@ func getTmdb(url string, payload interface{}) (interface{}, error) {
 
 	res, err := http.Get(url)
 	if err != nil { // HTTP connection error
-		return payload, err
+		return nil, err
 	}
 
 	if res.Header.Get(`x-ratelimit-remaining`) == `0` { // Out of requests for this period
@@ -68,6 +68,7 @@ func getTmdb(url string, payload interface{}) (interface{}, error) {
 	if err != nil { // Failed to read body
 		return payload, err
 	}
+	defer res.Body.Close()
 
 	if res.StatusCode >= 200 && res.StatusCode < 300 { // Success!
 		json.Unmarshal(body, &payload)
