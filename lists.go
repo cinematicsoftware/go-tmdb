@@ -24,7 +24,7 @@ type ListItemStatus struct {
 }
 
 // GetListInfo gets a list by id
-// http://docs.themoviedb.apiary.io/#reference/lists/listid/get
+// https://developers.themoviedb.org/3/lists/get-list-details
 func (tmdb *TMDb) GetListInfo(id string) (*ListInfo, error) {
 	var listInfo ListInfo
 	uri := fmt.Sprintf("%s/list/%v?api_key=%s", baseURL, id, tmdb.apiKey)
@@ -39,7 +39,7 @@ func (tmdb *TMDb) GetListInfo(id string) (*ListInfo, error) {
 // }
 
 // GetListItemStatus checks to see if a movie ID is already added to a list
-// http://docs.themoviedb.apiary.io/#reference/lists/listiditemstatus/get
+// https://developers.themoviedb.org/3/lists/check-item-status
 func (tmdb *TMDb) GetListItemStatus(id string, movieID int) (*ListItemStatus, error) {
 	var itemStatus ListItemStatus
 	uri := fmt.Sprintf("%s/list/%v/item_status?api_key=%s&movie_id=%v", baseURL, id, tmdb.apiKey, movieID)

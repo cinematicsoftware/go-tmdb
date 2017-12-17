@@ -35,6 +35,11 @@ func (s *TmdbSuite) TestGetAccountRatedTv(c *C) {
 	s.baseTest(&result, err, c)
 }
 
+func (s *TmdbSuite) TestGetAccountRatedTvEpisodes(c *C) {
+	result, err := s.tmdb.GetAccountRatedTvEpisodes(s.accountID, s.session, nil)
+	s.baseTest(&result, err, c)
+}
+
 func (s *TmdbSuite) TestGetAccountWatchlistMovies(c *C) {
 	result, err := s.tmdb.GetAccountWatchlistMovies(s.accountID, s.session, nil)
 	s.baseTest(&result, err, c)

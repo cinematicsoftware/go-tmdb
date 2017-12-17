@@ -27,6 +27,13 @@ type apiStatus struct {
 	Message string `json:"status_message"`
 }
 
+type PaginatedResults struct {
+	ID           int `json:",omitempty"`
+	Page         int
+	TotalPages   int `json:"total_pages"`
+	TotalResults int `json:"total_results"`
+}
+
 // Init setup the apiKey
 func Init(apiKey string) *TMDb {
 	return &TMDb{apiKey: apiKey}

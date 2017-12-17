@@ -33,15 +33,15 @@ func (s *TmdbSuite) TestSearchKeyword(c *C) {
 	c.Assert(result.Results[0].Name, Equals, "action")
 }
 
-func (s *TmdbSuite) TestSearchList(c *C) {
-	result, err := s.tmdb.SearchList("best picture", nil)
-	s.baseTest(&result, err, c)
-	c.Assert(result.Page, Equals, 1)
-	c.Assert(result.Results, Not(HasLen), 0)
-	c.Assert(result.TotalResults, Not(Equals), 0)
-	c.Assert(result.Results[0].ID, Equals, "509ec17b19c2950a0600050d")
-	c.Assert(result.Results[0].Name, Equals, "Best Picture Winners - The Academy Awards")
-}
+// func (s *TmdbSuite) TestSearchList(c *C) {
+// 	result, err := s.tmdb.SearchList("best picture", nil)
+// 	s.baseTest(&result, err, c)
+// 	c.Assert(result.Page, Equals, 1)
+// 	c.Assert(result.Results, Not(HasLen), 0)
+// 	c.Assert(result.TotalResults, Not(Equals), 0)
+// 	c.Assert(result.Results[0].ID, Equals, "509ec17b19c2950a0600050d")
+// 	c.Assert(result.Results[0].Name, Equals, "Best Picture Winners - The Academy Awards")
+// }
 
 func (s *TmdbSuite) TestSearchMovie(c *C) {
 	result, err := s.tmdb.SearchMovie("Fight Club", nil)
