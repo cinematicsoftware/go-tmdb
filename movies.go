@@ -47,7 +47,7 @@ type Movie struct {
 	Credits           *MovieCredits           `json:",omitempty"`
 	Images            *MovieImages            `json:",omitempty"`
 	Keywords          *MovieKeywords          `json:",omitempty"`
-	Releases          *MovieReleases          `json:",omitempty"`
+	Releases          *MovieReleases          `json:"release_dates,omitempty"`
 	Videos            *MovieVideos            `json:",omitempty"`
 	Translations      *MovieTranslations      `json:",omitempty"`
 	Similar           *MoviePagedResults      `json:",omitempty"`
@@ -95,7 +95,7 @@ type MoviePagedResults struct {
 	Credits           *MovieCredits           `json:",omitempty"`
 	Images            *MovieImages            `json:",omitempty"`
 	Keywords          *MovieKeywords          `json:",omitempty"`
-	Releases          *MovieReleases          `json:",omitempty"`
+	Releases          *MovieReleases          `json:"release_dates,omitempty"`
 	Videos            *MovieVideos            `json:",omitempty"`
 	Translations      *MovieTranslations      `json:",omitempty"`
 	Similar           *MoviePagedResults      `json:",omitempty"`
@@ -126,7 +126,7 @@ type MovieAlternativeTitles struct {
 	Credits       *MovieCredits      `json:",omitempty"`
 	Images        *MovieImages       `json:",omitempty"`
 	Keywords      *MovieKeywords     `json:",omitempty"`
-	Releases      *MovieReleases     `json:",omitempty"`
+	Releases      *MovieReleases     `json:"release_dates,omitempty"`
 	Videos        *MovieVideos       `json:",omitempty"`
 	Translations  *MovieTranslations `json:",omitempty"`
 	Similar       *MoviePagedResults `json:",omitempty"`
@@ -171,7 +171,7 @@ type MovieCredits struct {
 	AlternativeTitles *MovieAlternativeTitles `json:"alternative_titles,omitempty"`
 	Images            *MovieImages            `json:",omitempty"`
 	Keywords          *MovieKeywords          `json:",omitempty"`
-	Releases          *MovieReleases          `json:",omitempty"`
+	Releases          *MovieReleases          `json:"release_dates,omitempty"`
 	Videos            *MovieVideos            `json:",omitempty"`
 	Translations      *MovieTranslations      `json:",omitempty"`
 	Similar           *MoviePagedResults      `json:",omitempty"`
@@ -200,7 +200,7 @@ type MovieImages struct {
 	AlternativeTitles *MovieAlternativeTitles `json:"alternative_titles,omitempty"`
 	Credits           *MovieCredits           `json:",omitempty"`
 	Keywords          *MovieKeywords          `json:",omitempty"`
-	Releases          *MovieReleases          `json:",omitempty"`
+	Releases          *MovieReleases          `json:"release_dates,omitempty"`
 	Videos            *MovieVideos            `json:",omitempty"`
 	Translations      *MovieTranslations      `json:",omitempty"`
 	Similar           *MoviePagedResults      `json:",omitempty"`
@@ -220,7 +220,7 @@ type MovieKeywords struct {
 	AlternativeTitles *MovieAlternativeTitles `json:"alternative_titles,omitempty"`
 	Credits           *MovieCredits           `json:",omitempty"`
 	Images            *MovieImages            `json:",omitempty"`
-	Releases          *MovieReleases          `json:",omitempty"`
+	Releases          *MovieReleases          `json:"release_dates,omitempty"`
 	Videos            *MovieVideos            `json:",omitempty"`
 	Translations      *MovieTranslations      `json:",omitempty"`
 	Similar           *MoviePagedResults      `json:",omitempty"`
@@ -249,7 +249,7 @@ type MovieLists struct {
 	Credits           *MovieCredits           `json:",omitempty"`
 	Images            *MovieImages            `json:",omitempty"`
 	Keywords          *MovieKeywords          `json:",omitempty"`
-	Releases          *MovieReleases          `json:",omitempty"`
+	Releases          *MovieReleases          `json:"release_dates,omitempty"`
 	Videos            *MovieVideos            `json:",omitempty"`
 	Translations      *MovieTranslations      `json:",omitempty"`
 	Similar           *MoviePagedResults      `json:",omitempty"`
@@ -260,12 +260,13 @@ type MovieLists struct {
 
 // MovieRelease struct
 type MovieRelease struct {
-	ID        int
-	Countries []struct {
-		Iso3166_1     string `json:"iso_3166_1"`
+	Iso3166_1    string `json:"iso_3166_1"`
+	ReleaseDates []struct {
 		Certification string
+		Iso639_1      string `json:"iso_639_1"`
 		ReleaseDate   string `json:"release_date"`
-	}
+		Type          int
+	} `json:"release_dates"`
 	AlternativeTitles *MovieAlternativeTitles `json:"alternative_titles,omitempty"`
 	Credits           *MovieCredits           `json:",omitempty"`
 	Images            *MovieImages            `json:",omitempty"`
@@ -312,7 +313,7 @@ type MovieReviews struct {
 	Credits           *MovieCredits           `json:",omitempty"`
 	Images            *MovieImages            `json:",omitempty"`
 	Keywords          *MovieKeywords          `json:",omitempty"`
-	Releases          *MovieReleases          `json:",omitempty"`
+	Releases          *MovieReleases          `json:"release_dates,omitempty"`
 	Videos            *MovieVideos            `json:",omitempty"`
 	Translations      *MovieTranslations      `json:",omitempty"`
 	Similar           *MoviePagedResults      `json:",omitempty"`
@@ -333,7 +334,7 @@ type MovieTranslations struct {
 	Credits           *MovieCredits           `json:",omitempty"`
 	Images            *MovieImages            `json:",omitempty"`
 	Keywords          *MovieKeywords          `json:",omitempty"`
-	Releases          *MovieReleases          `json:",omitempty"`
+	Releases          *MovieReleases          `json:"release_dates,omitempty"`
 	Videos            *MovieVideos            `json:",omitempty"`
 	Similar           *MoviePagedResults      `json:",omitempty"`
 	Reviews           *MovieReviews           `json:",omitempty"`
@@ -358,7 +359,7 @@ type MovieVideos struct {
 	Credits           *MovieCredits           `json:",omitempty"`
 	Images            *MovieImages            `json:",omitempty"`
 	Keywords          *MovieKeywords          `json:",omitempty"`
-	Releases          *MovieReleases          `json:",omitempty"`
+	Releases          *MovieReleases          `json:"release_dates,omitempty"`
 	Translations      *MovieTranslations      `json:",omitempty"`
 	Similar           *MoviePagedResults      `json:",omitempty"`
 	Reviews           *MovieReviews           `json:",omitempty"`
