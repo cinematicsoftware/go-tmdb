@@ -347,7 +347,7 @@ type MovieTranslations struct {
 type MovieVideos struct {
 	ID      int
 	Results []struct {
-		ID        int
+		ID        string
 		Iso639_1  string `json:"iso_639_1"`
 		Iso3166_1 string `json:"iso_3166_1"`
 		Key       string
